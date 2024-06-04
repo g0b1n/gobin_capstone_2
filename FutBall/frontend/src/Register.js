@@ -47,6 +47,8 @@ function Register() {
             console.error('Error registering user', error);
         };
     }
+
+    
   return (
     <form className="register-form" onSubmit={handleSubmit}>
             <label>
