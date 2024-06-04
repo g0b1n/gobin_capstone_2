@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 function Register() {
+
+    const navigate = useNavigate();
 
     // define state to hold form data
     const [formData, setFormData] = useState({
@@ -40,6 +43,8 @@ function Register() {
             const result = await response.json();
             if (response.ok) {
                 console.log('User registered successfully', result);
+                // redirect to the home page
+                navigate('/');
             } else {
                 console.error('Error registering user', result);
             }
@@ -48,7 +53,6 @@ function Register() {
         };
     }
 
-    
   return (
     <form className="register-form" onSubmit={handleSubmit}>
             <label>

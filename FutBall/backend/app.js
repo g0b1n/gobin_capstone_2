@@ -27,15 +27,13 @@ app.use(function (req, res) {
 // generic error handler
 app.use(function (err, req, res, next) {
     // default status is 500 internal server error
-    let status = err.status || 500;
+    res.status(err.status || 500);
 
     // set the status and alert the user
-    return res.status.json({
-        error: {
+    return res.json({
             message: err.message,
-            status: status,
-        }
-    })
-})
+            status: err.status
+    });
+});
 
 module.exports = app;

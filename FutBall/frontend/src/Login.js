@@ -49,6 +49,10 @@ function Login() {
         };
     }
 
+    const handleClick = async (e) => {
+        navigate('/')
+    }
+
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       <label>
