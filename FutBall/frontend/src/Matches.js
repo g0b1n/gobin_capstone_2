@@ -38,7 +38,7 @@ function Matches() {
 
     return (
         <div className="matches-container">
-            <h1>Matches for {new Date(selectedDate).toDateString()}</h1>
+            <h1>Matches Today</h1>
             <input 
                 type="date"
                 value={selectedDate}
