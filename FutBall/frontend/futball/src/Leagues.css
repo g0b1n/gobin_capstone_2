@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.leagues-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leagues-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leagues-header h4 {
+    font-size: 24px;
+    color: #333;
+}
+
+.leagues-list {
+    list-style: none;
+    padding: 0;
+}
+
+.leagues-list li {
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leagues-list li:hover {
+    background-color: #39ad4d50;
+}
+
+.leagues-list p {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.league-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.league-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.league-header h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.season-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.season-info h4 {
+    font-size: 20px;
+    color: #666;
+}
+
+.league-table {
+    margin-top: 20px;
+}
