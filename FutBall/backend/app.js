@@ -9,14 +9,14 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-    origin: function (origin, callBack) {
-        // allow requests with no orign like mobile apps or curl 
-        if (!origin) return callBack(null, true);
+    origin: function (origin, callback) {
+        // allow requests with no origin like mobile apps or curl 
+        if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) {
             const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
-            return callBack(new ExpressError(msg), false);
+            return callback(new ExpressError(msg, 403), false);
         };
-        return callBack(null, true);
+        return callback(null, true);
     },
     // expose cookies/auth headers for frontend
     credentials: true
@@ -35,9 +35,6 @@ app.use('/auth', authRoutes);
 app.use("/matches", matchRoutes);
 app.use('/leagues', leagueRoutes);
 
-
-
-
 // 404 error handler
 app.use(function (req, res) {
     return new ExpressError("Page Not Found", 404);
@@ -50,8 +47,8 @@ app.use(function (err, req, res, next) {
 
     // set the status and alert the user
     return res.json({
-            message: err.message,
-            status: err.status
+        message: err.message,
+        status: err.status
     });
 });
 
