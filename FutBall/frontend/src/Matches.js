@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import config from "../config";
+import config from "./config";
 import DatePicker from "./DatePicker";
 import './Matches.css';
 

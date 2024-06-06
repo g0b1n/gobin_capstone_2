@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './MatchDetails.css';
-import config from '../config';
+import config from './config';
 
 function MatchDetails() {
 

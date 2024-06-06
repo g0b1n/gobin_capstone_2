@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import LeagueTable from "./LeagueTable";
-import config from '../config';
+import config from './config';
 
 function LeagueDetails() {
     

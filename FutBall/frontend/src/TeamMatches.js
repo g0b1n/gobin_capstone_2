@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import './TeamMatches.css';
-import config from "../config";
+import config from "./config";
 
 function TeamMatches() {
 

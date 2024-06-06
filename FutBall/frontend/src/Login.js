@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './Context/UserContext';
 import './Login.css';
-import config from '../config';
+import config from './config';
 
 function Login() {
 
