@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './MatchDetails.css';
+import config from '../config';
 
 function MatchDetails() {
 
@@ -15,7 +16,7 @@ function MatchDetails() {
         const fetchMatchDetails = async () => {
             try {
                 // make get request
-                const response = await fetch(`http://localhost:5000/matches/${matchId}`);
+                const response = await fetch(`${config.API_BASE_URL}/matches/${matchId}`);
                 const data = await response.json();
                 console.log(data);
                 setMatchDetails(data.response[0]);

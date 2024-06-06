@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import config from "../config";
 import './Leagues.css';
 
 
@@ -13,7 +14,8 @@ function Leagues() {
         const fetchLeagues = async () => {
             try {
                 // make get request
-                const response = await fetch('http://localhost:5000/leagues')
+                // const response = await fetch('http://localhost:5000/leagues')
+                const response = await fetch(`${config.API_BASE_URL}/leagues`);
                 // parse response as json
                 const data = await response.json();
                 console.log(data)

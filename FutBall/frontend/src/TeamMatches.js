@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import './TeamMatches.css';
+import config from "../config";
 
 function TeamMatches() {
 
@@ -13,7 +14,7 @@ function TeamMatches() {
         const fetchTeamMatches = async () => {
             try {
                 // make get request
-                const response = await fetch(`http://localhost:5000/matches/${teamId}/fixtures`);
+                const response = await fetch(`${config.API_BASE_URL}/matches/${teamId}/fixtures`);
                 // parse response as json
                 const data = await response.json()
                 console.log(data);

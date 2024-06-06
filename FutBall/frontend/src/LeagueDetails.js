@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import LeagueTable from "./LeagueTable";
+import config from '../config';
 
 function LeagueDetails() {
     
@@ -16,7 +17,8 @@ function LeagueDetails() {
         const fetchLeagueDetails = async () => {
             try {
                 // make get request
-                const response = await fetch(`http://localhost:5000/leagues/${leagueId}`);
+                // const response = await fetch(`http://localhost:5000/leagues/${leagueId}`);
+                const response = await fetch(`${config.API_BASE_URL}/leagues/${leagueId}`);
                 const data = await response.json();
                 console.log(data);
                 setLeagueDetails(data.response[0])

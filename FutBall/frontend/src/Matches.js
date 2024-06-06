@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import config from "../config";
 import DatePicker from "./DatePicker";
 import './Matches.css';
 
@@ -15,7 +16,8 @@ function Matches() {
         const fetchMatches = async (date) => {
             try {
                 // make get request
-                const response = await fetch(`http://localhost:5000/matches?date=${date}`);
+                // const response = await fetch(`http://localhost:5000/matches?date=${date}`);
+                const response = await fetch(`${config.API_BASE_URL}/matches?date=${date}`);
                 // parse response as json
                 const data = await response.json()
                 console.log(data);
@@ -38,7 +40,7 @@ function Matches() {
 
     return (
         <div className="matches-container">
-            <h1>Matches Today</h1>
+            <h1>Today's Matches</h1>
             <input 
                 type="date"
                 value={selectedDate}

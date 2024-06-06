@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import './LeagueTable.css';
+import config from '../config';
 
 function LeagueTable() {
 
@@ -14,7 +15,8 @@ function LeagueTable() {
     useEffect(() => {
         const fetchTable = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/leagues/${leagueId}/standings`);
+                // const response = await fetch(`http://localhost:5000/leagues/${leagueId}/standings`);
+                const response = await fetch(`${config.API_BASE_URL}/leagues/${leagueId}/standings`);
                 const data = await response.json();
                 console.log(data);
 

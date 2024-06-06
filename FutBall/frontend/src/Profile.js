@@ -1,9 +1,13 @@
 import React from 'react'
+import { useUser } from './Context/UserContext';
 
 function Profile() {
+
+  const { user, setUser, isLoggedIn } = useUser();
+  
   return (
     <div>
-      <p>User Profile</p>
+      <p>{user.username} Profile</p>
     </div>
   )
 }
