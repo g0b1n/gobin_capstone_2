@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import config from "../config";
 
 // Create a context object
 const UserContext = createContext();
@@ -18,7 +19,7 @@ export const UserProvider = ({ children }) => {
             const storedToken = localStorage.getItem('token');
             if (storedToken) {
                 try {
-                    const response = await fetch('http://localhost:5000/auth/me', {
+                    const response = await fetch(`${config.API_BASE_URL}/auth/me`, {
                         headers: {
                             'Authorization': `Bearer ${storedToken}`
                         }

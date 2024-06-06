@@ -3,7 +3,24 @@ const cors = require('cors');
 const app = express();
 const ExpressError = require('./helpers/expressError');
 
-app.use(cors());
+// allowed origins for cors 
+const allowedOrigins = [
+  'https://capstone-2-futball-frontend-6c1740fe1d19.herokuapp.com'
+];
+
+app.use(cors({
+    origin: function (origin, callBack) {
+        // allow requests with no orign like mobile apps or curl 
+        if (!origin) return callBack(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
+            return callBack(new ExpressError(msg), false);
+        };
+        return callBack(null, true);
+    },
+    // expose cookies/auth headers for frontend
+    credentials: true
+}));
 app.use(express.json());
 
 // import routes
@@ -17,6 +34,8 @@ app.use("/users", userRoutes);
 app.use('/auth', authRoutes);
 app.use("/matches", matchRoutes);
 app.use('/leagues', leagueRoutes);
+
+
 
 
 // 404 error handler
