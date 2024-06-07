@@ -42,7 +42,7 @@ function Login() {
                 // update the user context 
                 setUser(result.user)
                 // redirect to the home page
-                navigate('/');
+                navigate('/profile');
             } else {
                 console.error('Error logging in user', result);
             }
