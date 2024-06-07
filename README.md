@@ -17,7 +17,7 @@ This are the most basic features that a stastistics providing app for football n
 In this app i am using API-FOOTBALL from RapidAPI. When i started this project i was using Football-data.org API but this API lacked some data that i wanted and was also little difficult to fetch data from. The API-FOOTBALL had more data available for me to fetch and was little more userfirnedly.
 
 ## Technology Stack
-- #Frontend:# React.js
-- #Backend:# Node.js with Express
-- #Database:# PostgreSQL
-- #Deployment:# Heroku
+- Frontend: React.js
+- Backend: Node.js with Express
+- Database: PostgreSQL
+- Deployment: Heroku
