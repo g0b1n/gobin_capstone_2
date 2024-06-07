@@ -4,6 +4,11 @@ import { useUser } from './Context/UserContext';
 function Profile() {
 
   const { user, setUser, isLoggedIn } = useUser();
+
+  // check if user exists 
+  if (!user) {
+    return <div>Loading...</div>;
+  };
   
   return (
     <div>

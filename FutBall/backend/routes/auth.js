@@ -26,8 +26,10 @@ router.post('/register', async (req, res, next) => {
     // Get the newly created user
     const user = result.rows[0];
 
+    // generate JWT tokem
+    const token = jwt.sign({ username: user.username }, SECRET_KEY);
     // Send back the user details as a JSON response
-    return res.status(201).json({ user });
+    return res.status(201).json({ user, token });
   } catch (err) {
     // Handle duplicate username or email error
     if (err.code === '23505') {
@@ -57,7 +59,7 @@ router.post('/login', async (req, res, next) => {
       if (isValid) {
         // Generate a JWT token
         const token = jwt.sign({ username }, SECRET_KEY);
-        return res.json({ token });
+        return res.json({ token, user });
       }
     }
 
@@ -96,7 +98,7 @@ router.get('/me', async (req, res) => {
     res.json(result.rows[0]);
   } catch (error) {
     console.error('Error fetching user data:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    return res.status(401).json({ message: 'Invalid or expired token' });
   }
 });
 
